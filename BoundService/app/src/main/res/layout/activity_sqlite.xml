@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SQLiteActivity"
+    android:layout_margin="15dp"
+    android:padding="10dp"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:id="@+id/layoutCar">
+
+   <com.google.android.material.textfield.TextInputLayout
+       app:layout_constraintTop_toTopOf="parent"
+       android:id="@+id/txtId"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+       <EditText
+           android:id="@+id/editId"
+           android:hint="ID"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"/>
+
+   </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        app:layout_constraintTop_toBottomOf="@id/txtId"
+        android:id="@+id/txtCarName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <EditText
+            android:id="@+id/editCarName"
+            android:hint="Car Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtColorCar"
+        app:layout_constraintTop_toBottomOf="@id/txtCarName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <EditText
+            android:id="@+id/editColorCar"
+            android:hint="Color Car"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Remove"
+        android:id="@+id/btnRemove"
+        app:layout_constraintEnd_toStartOf="@id/btnAdd"
+        app:layout_constraintTop_toBottomOf="@id/txtColorCar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        app:layout_constraintStart_toEndOf="@id/btnRemove"
+        app:layout_constraintTop_toBottomOf="@id/txtColorCar"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Add"
+        android:id="@+id/btnAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        app:layout_constraintEnd_toStartOf="@id/btnUpdate"
+        app:layout_constraintTop_toBottomOf="@id/btnRemove"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="FIND"
+        android:id="@+id/btnFind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        app:layout_constraintStart_toEndOf="@id/btnFind"
+        app:layout_constraintTop_toBottomOf="@id/btnAdd"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="UPDATE"
+        android:id="@+id/btnUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        tools:listitem="@layout/list_car"
+        android:padding="10dp"
+        android:id="@+id/recyclerView"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutCar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
